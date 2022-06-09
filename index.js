@@ -254,3 +254,6 @@ bot.hears(/^[\d\w]{64}/gi, async (ctx) => {
 });
 
 bot.launch();
+
+process.once("SIGINT", () => bot.stop("SIGINT"));
+process.once("SIGTERM", () => bot.stop("SIGTERM"));
